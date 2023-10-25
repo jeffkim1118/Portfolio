@@ -2,6 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-.navbar li{
-  text-align: center;
+html {
+  --text-color-normal: #0a244d;
+  --text-color-light: #8cabd9;
 }
+
+html[data-theme='dark'] {
+  --text-color-normal: hsl(210, 10%, 62%);
+  --text-color-light: hsl(210, 15%, 35%);
+  --text-color-richer: hsl(210, 50%, 72%);
+  --text-color-highlight: hsl(25, 70%, 45%);
+}
+
+.navbar-container{
+ 
+}
+
+.navbar li{
+  
+}
+
+.grid-line{
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: [first] 15% [line2] 20% [line3] auto [col4-start] 20% [five] 15% [end];
+  grid-template-rows: [row1-start] 25% [row1-end] 20% [another] 400px [third-line] auto [last-line];
+}
+
+.home-container{
+  grid-column-start: line2;
+  grid-column-end: five;
+  grid-row-start: row1-end;
+  grid-row-end: last-line;
+}
+
