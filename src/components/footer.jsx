@@ -20,11 +20,11 @@ export default function Footer() {
           <p>Copyright © 2023 - All right reserved</p>
         </aside>
         <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-          <a href="#">
+          <a href="https://github.com/jeffkim1118" target="_blank">
             <BsGithub className="text-4xl"/>
           </a>
 
-          <a href="#">
+          <a href="https://www.linkedin.com/in/yoonsung-kim-639b30178/" target="_blank">
             <BsLinkedin className="text-4xl"/>
           </a>
           

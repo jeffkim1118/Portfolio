@@ -10,9 +10,7 @@ import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy } fro
 
 export default function Navbar() {
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
-    const scrollToTop = () => {
-      scroll.scrollToTop();
-    };
+   
     useEffect(() => {
         localStorage.setItem("theme", theme);
         const localTheme = localStorage.getItem('theme');
@@ -32,24 +30,24 @@ export default function Navbar() {
     <div className="navbar-container w-fit fixed">
       <ul className="navbar flex-col rounded-lg w-fit m-10 ">
         <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-5">
-          <a className="nav-link cursor-pointer" onClick={scrollToTop}>
+          <Link className="nav-link cursor-pointer" to="home" smooth={true} duration={600}>
             <AiFillHome className="text-2xl" />
-          </a>
+          </Link>
         </li>
         <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-5">
-          <a className="nav-link" href="#">
+          <Link className="nav-link cursor-pointer" to="about" smooth={true} duration={600}>
             <CgProfile className="text-2xl" />
-          </a>
+          </Link>
         </li>
         <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-5">
-          <a className="nav-link" href="#">
+          <Link className="nav-link cursor-pointer" to="portfolio" smooth={true} duration={600}>
             <PiProjectorScreen className="text-2xl" />
-          </a>
+          </Link>
         </li>
         <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-5">
-          <a className="nav-link" href="#">
+          <Link className="nav-link cursor-pointer" to="contact" smooth={true} duration={600}>
             <BiSolidContact className="text-2xl" />
-          </a>
+          </Link>
         </li>
         <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-5">
           <label className="swap swap-rotate">

@@ -14,7 +14,7 @@ export default function Home() {
   console.log(hitCounter)
 
   return (
-    <div className="home-component">
+    <div className="home-component" name="home">
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content text-center">
           <div className="max-w-md">
@@ -31,7 +31,7 @@ export default function Home() {
             </span>
             <br />
 
-            <button className="btn btn-primary">Get Started</button>
+            <button className="btn btn-primary" href="about">Get Started</button>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="about-component">
+    <div className="about-component" name="about">
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img
