@@ -9,9 +9,8 @@ export default function Home() {
       setHitCounter(result.value);
     });
   }, []);
-  
 
-  console.log(hitCounter)
+  console.log(hitCounter);
 
   return (
     <div className="home-component" name="home">
@@ -24,14 +23,18 @@ export default function Home() {
               <br />
               Check out my portfolio website!
             </p>
-            <label>Visitor Count</label>
-            <br />
-            <span className="countdown font-mono text-6xl py-3">
-              <span style={{ "--value": 40 }}></span>
-            </span>
-            <br />
 
-            <button className="btn btn-primary" href="about">Get Started</button>
+            <div className="stats shadow m-3">
+              <div className="stat">
+                <div className="stat-title">Total Page Views</div>
+                <div className="stat-value">89,400</div>
+                <div className="stat-desc">21% more than last month</div>
+              </div>
+            </div><br/>
+
+            <button className="btn btn-primary" href="about">
+              Get Started
+            </button>
           </div>
         </div>
       </div>
