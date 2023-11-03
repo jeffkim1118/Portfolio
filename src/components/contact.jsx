@@ -1,8 +1,11 @@
+import Phone from "./phone";
+
 export default function Contact() {
   return (
     <div name="contact">
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
+         
           <div contact-form-container>
             <form className="contact-from">
             <label className="input-group">
@@ -33,6 +36,7 @@ export default function Contact() {
               <button className="btn btn-primary">Send</button>
             </form>
           </div>
+          <Phone/>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import {
   BiLogoCss3,
   BiLogoJavascript,
 } from "react-icons/bi";
-import { SiRubyonrails } from "react-icons/si";
+import { SiRubyonrails, SiTailwindcss } from "react-icons/si";
 import { DiRuby } from "react-icons/di";
 
 export default function About() {
@@ -30,8 +30,11 @@ export default function About() {
               <BiLogoJavascript className="text-6xl" />
               <BiLogoHtml5 className="text-6xl" />
               <BiLogoCss3 className="text-6xl" />
+              <SiTailwindcss className="text-6xl"/>
               <DiRuby className="text-6xl" />
               <SiRubyonrails className="text-6xl" />
+
+              
             </div>
           </div>
         </div>
