@@ -5,8 +5,7 @@ import { AiFillHome } from "react-icons/ai";
 import { MdDarkMode } from "react-icons/md";
 import Toggle from "react-toggle";
 import { useState, useEffect } from "react";
-import { scrollToTop } from "react-scroll/modules/mixins/animate-scroll";
-import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
+import { Link, animateScroll as scroll, scrollSpy } from 'react-scroll';
 
 export default function Navbar() {
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
@@ -25,31 +24,30 @@ export default function Navbar() {
         }
     }
 
-  const handleChange = () => {};
   return (
     <div className="navbar-container w-fit fixed">
       <ul className="navbar flex-col rounded-lg w-fit m-10 ">
-        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-5">
+        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-3">
           <Link className="nav-link cursor-pointer" to="home" smooth={true} duration={600}>
             <AiFillHome className="text-2xl" />
           </Link>
         </li>
-        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-5">
+        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-3">
           <Link className="nav-link cursor-pointer" to="about" smooth={true} duration={600}>
             <CgProfile className="text-2xl" />
           </Link>
         </li>
-        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-5">
+        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-3">
           <Link className="nav-link cursor-pointer" to="portfolio" smooth={true} duration={600}>
             <PiProjectorScreen className="text-2xl" />
           </Link>
         </li>
-        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-5">
+        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-3">
           <Link className="nav-link cursor-pointer" to="contact" smooth={true} duration={600}>
             <BiSolidContact className="text-2xl" />
           </Link>
         </li>
-        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-5">
+        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-3">
           <label className="swap swap-rotate">
            
             <input type="checkbox" onChange={handleToggle} checked={theme === "light" ? false : true}/>

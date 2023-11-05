@@ -8,14 +8,15 @@ import {
 import { SiRubyonrails, SiTailwindcss } from "react-icons/si";
 import { DiRuby } from "react-icons/di";
 
+
 export default function About() {
   return (
     <div className="about-component" name="about">
       <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row ">
+        <div className="hero-content flex-col lg:flex-row">
           <img
             src={MyPic}
-            className="max-w-sm rounded-lg shadow-2xl"
+            className="max-w-sm rounded-lg shadow-2xl transition opacity duration-700"
             alt="personal-pic"
           />
           <div>
@@ -25,6 +26,7 @@ export default function About() {
               Computer Information Systems. I'm currently working my way to
               become a Fullstack developer. Here are my tools for development.
             </p>
+            {/* Icons */}
             <div className="flex flex-row">
               <BiLogoReact className="text-6xl" />
               <BiLogoJavascript className="text-6xl" />
@@ -33,8 +35,6 @@ export default function About() {
               <SiTailwindcss className="text-6xl"/>
               <DiRuby className="text-6xl" />
               <SiRubyonrails className="text-6xl" />
-
-              
             </div>
           </div>
         </div>
