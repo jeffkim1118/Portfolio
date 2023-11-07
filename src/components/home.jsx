@@ -23,11 +23,12 @@ export default function Home() {
             <p className="py-6">My name is Yoonsung Kim.</p>
 
             <div className="link-container">
-              <nav className="flex gap-4">
+              <nav className="flex">
                 <a
                   href="https://github.com/jeffkim1118"
                   target="_blank"
                   rel="noreferrer"
+                  className="m-auto"
                 >
                   <BsGithub className="text-4xl m-auto" />
                   Github
@@ -37,6 +38,7 @@ export default function Home() {
                   href="https://www.linkedin.com/in/yoonsung-kim-639b30178/"
                   target="_blank"
                   rel="noreferrer"
+                  className="m-auto"
                 >
                   <BsLinkedin className="text-4xl m-auto" />
                   Linkedin
@@ -46,6 +48,7 @@ export default function Home() {
                   href="https://medium.com/@1019yskim"
                   target="_blank"
                   rel="noreferrer"
+                  className="m-auto"
                 >
                   <FaMedium className="text-4xl m-auto" />
                   Medium
