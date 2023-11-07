@@ -4,6 +4,7 @@ import { BsGithub } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { Link } from "react-scroll";
 import { FaMedium } from "react-icons/fa6";
+import Clock from "./clock";
 
 export default function Home() {
   const [hitCounter, setHitCounter] = useState();
@@ -21,7 +22,7 @@ export default function Home() {
           <div className="max-w-md">
             <h1 className="text-5xl font-bold">Hello there!</h1>
             <p className="py-6">My name is Yoonsung Kim.</p>
-
+         
             <div className="link-container">
               <nav className="flex">
                 <a
@@ -55,9 +56,11 @@ export default function Home() {
                 </a>
               </nav>
             </div>
-
+            
             <div className="stats shadow m-3">
+              
               <div className="stat">
+              <Clock/>
                 <div className="stat-title">Total Page Views</div>
                 <div className="stat-value">89,400</div>
                 <div className="stat-desc">21% more than last month</div>
