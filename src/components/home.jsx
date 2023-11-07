@@ -7,12 +7,13 @@ import { FaMedium } from "react-icons/fa6";
 import Clock from "./clock";
 
 export default function Home() {
-  const [hitCounter, setHitCounter] = useState();
+  const [hitCounter, setHitCounter] = useState(0);
 
   useEffect(() => {
-    countapi.visits("global").then((result) => {
-      setHitCounter(result.value);
-    });
+    const storedCount = localStorage.getItem('pageVisits');
+    const initialCount = Number(storedCount) || 0;
+    setHitCounter(initialCount+1);
+    localStorage.setItem("pageVisits", initialCount+1)
   }, []);
 
   return (
@@ -62,7 +63,7 @@ export default function Home() {
               <div className="stat">
               <Clock/>
                 <div className="stat-title">Total Page Views</div>
-                <div className="stat-value">89,400</div>
+                <div className="stat-value">{hitCounter}</div>
                 <div className="stat-desc">21% more than last month</div>
               </div>
             </div>
