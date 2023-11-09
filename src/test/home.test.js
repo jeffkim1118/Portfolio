@@ -28,8 +28,8 @@ describe("Home component", () => {
   });
   it("Stat value should appear", () => {
     renderHome();
-    const statValue = screen.getByText("89,400");
-    expect(statValue).toBeInTheDocument();
+    const visitorCounter = screen.getByTestId('hitcounter');
+    expect(visitorCounter).toBeInTheDocument();
   });
   it("Stat description should appear", () => {
     renderHome();

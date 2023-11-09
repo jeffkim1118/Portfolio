@@ -1,19 +1,24 @@
 import { useState, useEffect } from "react";
-import countapi from "countapi-js";
 import { BsGithub } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { Link } from "react-scroll";
 import { FaMedium } from "react-icons/fa6";
 import Clock from "./clock";
+import {useSelector, useDispatch} from 'react-redux';
+import { increment } from "../features/counter/counterSlice";
 
 export default function Home() {
-  const [hitCounter, setHitCounter] = useState(0);
+  const visitorCount = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const storedCount = localStorage.getItem('pageVisits');
-    const initialCount = Number(storedCount) || 0;
-    setHitCounter(initialCount+1);
-    localStorage.setItem("pageVisits", initialCount+1)
+    // const storedCount = localStorage.getItem('pageVisits');
+    // const initialCount = Number(storedCount) || 0;
+    // setHitCounter(initialCount+1);
+    // localStorage.setItem("pageVisits", initialCount+1)
+
+    
+    dispatch(increment())
   }, []);
 
   return (
@@ -63,7 +68,7 @@ export default function Home() {
               <div className="stat">
               <Clock/>
                 <div className="stat-title">Total Page Views</div>
-                <div className="stat-value">{hitCounter}</div>
+                <div className="stat-value" data-testid="hitcounter">{visitorCount}</div>
                 <div className="stat-desc">21% more than last month</div>
               </div>
             </div>

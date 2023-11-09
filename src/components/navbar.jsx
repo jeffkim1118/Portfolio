@@ -2,8 +2,6 @@ import { CgProfile } from "react-icons/cg";
 import { PiProjectorScreen } from "react-icons/pi";
 import { BiSolidContact } from "react-icons/bi";
 import { AiFillHome } from "react-icons/ai";
-import { MdDarkMode } from "react-icons/md";
-import Toggle from "react-toggle";
 import { useState, useEffect } from "react";
 import { Link, animateScroll as scroll, scrollSpy } from 'react-scroll';
 
