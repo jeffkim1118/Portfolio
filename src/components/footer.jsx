@@ -1,5 +1,6 @@
 import { BsGithub } from "react-icons/bs";
 import { BsLinkedin } from 'react-icons/bs'
+import { FaMedium } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -26,6 +27,10 @@ export default function Footer() {
 
           <a href="https://www.linkedin.com/in/yoonsung-kim-639b30178/" target="_blank" rel="noreferrer" >
             <BsLinkedin className="text-4xl"/>
+          </a>
+
+          <a href="https://medium.com/@1019yskim" target="_blank" rel="noreferrer">
+          <FaMedium className="text-4xl" />
           </a>
           
         </nav>

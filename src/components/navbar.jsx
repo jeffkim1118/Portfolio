@@ -27,7 +27,7 @@ export default function Navbar() {
       <ul className="navbar flex-col rounded-lg w-fit m-10 ">
         <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-3">
           <Link className="nav-link cursor-pointer" to="home" smooth={true} duration={600}>
-            <AiFillHome className="text-2xl" />
+            <AiFillHome className="text-2xl"/>
           </Link>
         </li>
         <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-3">

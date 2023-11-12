@@ -39,7 +39,7 @@ function App() {
 
       {showButton && (
         <div className="w-fill text-right">
-          <button className="btn" onClick={scrollToTop}><BsFillArrowUpSquareFill className="text-4xl"/></button>
+          <button className="btn" onClick={scrollToTop}>Go back Up<BsFillArrowUpSquareFill className="text-4xl"/></button>
         </div>
       )}
 

@@ -1,4 +1,5 @@
 import Orthodoc from '../images/orthodoc.png';
+import oldWebsite from "../images/oldWebsite.png";
 
 const projects = [
   {
@@ -7,6 +8,12 @@ const projects = [
     description:
       "A training manual website for orthodontic treatment made for Orthodontic Harmony.",
     link: "https://orthodocinstrumentmanual.web.app/",
+  },
+  {
+    projectName: "YoonsungKim.com (Old)",
+    img:oldWebsite,
+    description:"My previous portfolio website that I made when I used Typescript for the first time. I used bootstrap to build the UI.",
+    link:"https://yoonsungkim-betabuild.netlify.app/"
   },
   {
     projectName: "GDWatcher",

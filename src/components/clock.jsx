@@ -7,23 +7,29 @@ export default function Clock() {
   useEffect(() => {
     setInterval(() => {
       const date = new Date();
-      setCurrentTime(date.toLocaleTimeString('en-US', {
-        hour: 'numeric',
-        minute: 'numeric',
-        hour12: true,
-      }));
-      setCurrentDate(date.toLocaleDateString('en-US', {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric',
-      }));
+      setCurrentTime(
+        date.toLocaleTimeString("en-US", {
+          hour: "numeric",
+          minute: "numeric",
+          hour12: true,
+        })
+      );
+      setCurrentDate(
+        date.toLocaleDateString("en-US", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        })
+      );
     }, 1000);
   }, []);
 
-  return(
-    <div className="text-4xl">
+  return (
+    <div>
+      {currentTime && currentDate ? <div className="text-4xl">
         <p>{currentDate}</p>
         <p>{currentTime}</p>
+      </div>: <div className="flex-row"><span className="loading loading-spinner loading-lg"></span></div>}
     </div>
-  )
+  );
 }
