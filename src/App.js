@@ -31,7 +31,8 @@ function App() {
 
   return (
     <div className="App h-screen">
-      <Navbar />
+      
+      <Navbar/>
       <Home />
       <About />
       <Portfolio />
