@@ -27,13 +27,13 @@ export default function About() {
             </p>
             {/* Icons */}
             <div className="flex flex-row">
-              <BiLogoReact className="text-6xl" />
-              <BiLogoJavascript className="text-6xl" />
-              <BiLogoHtml5 className="text-6xl" />
-              <BiLogoCss3 className="text-6xl" />
-              <SiTailwindcss className="text-6xl" />
-              <DiRuby className="text-6xl" />
-              <SiRubyonrails className="text-6xl" />
+              <BiLogoReact className="text-6xl hover:text-blue-600" />
+              <BiLogoJavascript className="text-6xl hover:text-yellow-400" />
+              <BiLogoHtml5 className="text-6xl hover:text-orange-600" />
+              <BiLogoCss3 className="text-6xl hover:text-cyan-600" />
+              <SiTailwindcss className="text-6xl hover:text-teal-600" />
+              <DiRuby className="text-6xl hover:text-red-500" />
+              <SiRubyonrails className="text-6xl hover:text-red-600" />
             </div>
           </div>
         </div>

@@ -45,9 +45,7 @@ function App() {
       )}
 
       <Footer />
-      {/* <Routes>
-        <Route exact path='/' element={<Home />}/>
-      </Routes> */}
+      
     </div>
   );
 }

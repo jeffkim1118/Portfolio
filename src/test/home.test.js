@@ -1,8 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import Home from "../components/home";
+import { Provider } from "react-redux";
+import { store } from "../app/store";
 
 const renderHome = () => {
-  return render(<Home />);
+  return render(<Provider store={store}><Home /></Provider>);
 };
 
 describe("Home component", () => {

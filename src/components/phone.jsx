@@ -15,33 +15,6 @@ export default function Phone() {
               <a href="https://www.linkedin.com/in/yoonsung-kim-639b30178/" target="_blank" rel="noreferrer" className="rounded-full hover:text-sky-400"><BsLinkedin  className="mt-4"/></a>
               <a href="https://medium.com/@1019yskim" target="_blank" rel="noreferrer" className="rounded-full hover:text-sky-400"><FaMedium  className="mt-4"/></a>
             </div>
-
-            {/* <form className="contact-form">
-              <label>
-                <input
-                  type="text"
-                  placeholder="name"
-                  className="input input-bordered"
-                />
-              </label>
-              <label>
-                <input
-                  type="text"
-                  placeholder="Email"
-                  className="input input-bordered"
-                />
-              </label>
-              <label>
-                <input
-                  type="text"
-                  placeholder="Type your message here..."
-                  className="input input-bordered"
-                />
-              </label>
-              <br />
-
-              <button className="btn btn-primary m-3">Send</button>
-            </form> */}
           </div>
         </div>
       </div>
