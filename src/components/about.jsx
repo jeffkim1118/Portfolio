@@ -13,11 +13,7 @@ export default function About() {
     <div className="about-component" name="about">
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
-          {/* <img
-            src={MyPic}
-            className="max-w-sm rounded-lg shadow-2xl transition opacity duration-700"
-            alt="personal-pic"
-          /> */}
+         
           <div>
             <h1 className="text-5xl font-bold">Who am I?</h1>
             <p className="text-3xl py-6">

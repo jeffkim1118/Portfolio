@@ -45,6 +45,7 @@ export default function Navbar() {
             <BiSolidContact className="text-2xl" />
           </Link>
         </li>
+        
         <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-3">
           <label className="swap swap-rotate">
            
