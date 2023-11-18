@@ -25,29 +25,29 @@ export default function Navbar() {
   return (
     <div className="navbar-container w-fit fixed">
       <ul className="navbar flex-col rounded-lg w-fit m-10 ">
-        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-3">
-          <Link className="nav-link cursor-pointer" to="home" smooth={true} duration={600}>
+        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full">
+          <Link className="nav-link cursor-pointer p-3" to="home" smooth={true} duration={600}>
             <AiFillHome className="text-2xl"/>
           </Link>
         </li>
-        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-3">
-          <Link className="nav-link cursor-pointer" to="about" smooth={true} duration={600}>
+        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full">
+          <Link className="nav-link cursor-pointer p-3" to="about" smooth={true} duration={600}>
             <CgProfile className="text-2xl" />
           </Link>
         </li>
-        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-3">
-          <Link className="nav-link cursor-pointer" to="portfolio" smooth={true} duration={600}>
+        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full">
+          <Link className="nav-link cursor-pointer p-3" to="portfolio" smooth={true} duration={600}>
             <PiProjectorScreen className="text-2xl" />
           </Link>
         </li>
-        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-3">
-          <Link className="nav-link cursor-pointer" to="contact" smooth={true} duration={600}>
+        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full">
+          <Link className="nav-link cursor-pointer p-3" to="contact" smooth={true} duration={600}>
             <BiSolidContact className="text-2xl" />
           </Link>
         </li>
         
-        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full p-3">
-          <label className="swap swap-rotate">
+        <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full">
+          <label className="swap swap-rotate p-3">
            
             <input type="checkbox" onChange={handleToggle} checked={theme === "light" ? false : true}/>
    

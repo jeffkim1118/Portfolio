@@ -11,3 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.liked{
+  filter: invert(31%) sepia(54%) saturate(5305%) hue-rotate(326deg) brightness(92%) contrast(88%);
+}
