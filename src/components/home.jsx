@@ -6,6 +6,7 @@ import { FaMedium } from "react-icons/fa6";
 import Clock from "./clock";
 import { useSelector, useDispatch } from "react-redux";
 import { increment } from "../features/counter/counterSlice";
+import MyPic from "../images/mypic.jpg";
 
 export default function Home() {
   const visitorCount = useSelector((state) => state.counter.value);
@@ -25,7 +26,13 @@ export default function Home() {
       <div className="hero min-h-screen bg-base-600">
         <div className="hero-content text-center">
           <div className="max-w-md">
-            <h1 className="text-5xl font-bold">Hello there!</h1>
+            <h1 className="text-5xl font-bold m-5">Hello there!</h1>
+            <img
+              src={MyPic}
+              alt="me"
+              className="w-20 rounded-full m-auto"
+            ></img>
+
             <p className="py-6 text-lg">My name is Yoonsung Kim.</p>
 
             <div className="link-container">

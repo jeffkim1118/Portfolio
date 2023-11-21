@@ -1,4 +1,4 @@
-import MyPic from "../images/mypic.jpg";
+
 import {
   BiLogoReact,
   BiLogoHtml5,
