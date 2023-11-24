@@ -24,3 +24,8 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
+
+
+# Flask api virtual environment and the cache bytecode directories.
+venv
+__pycache__
