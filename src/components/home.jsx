@@ -5,20 +5,20 @@ import { Link } from "react-scroll";
 import { FaMedium } from "react-icons/fa6";
 import Clock from "./clock";
 import { useSelector, useDispatch } from "react-redux";
-import { increment } from "../features/counter/counterSlice";
 import MyPic from "../images/mypic.jpg";
+import { fetchVisitors, incrementVisitor } from "../features/counter/counterSlice";
+
 
 export default function Home() {
-  const visitorCount = useSelector((state) => state.counter.value);
+  // const visitorCount = useSelector((state) => state.counter.value);
   const dispatch = useDispatch();
+  
 
   useEffect(() => {
-    // const storedCount = localStorage.getItem('pageVisits');
-    // const initialCount = Number(storedCount) || 0;
-    // setHitCounter(initialCount+1);
-    // localStorage.setItem("pageVisits", initialCount+1)
-
-    dispatch(increment());
+    // fetch('http://localhost:5000/visitor').then((res) => res.json()).then((data) => console.log(data))
+    
+    
+    
   }, []);
 
   return (
@@ -74,7 +74,7 @@ export default function Home() {
                 <Clock />
                 <div className="stat-title">Total Page Views</div>
                 <div className="stat-value" data-testid="hitcounter">
-                  {visitorCount}
+                  1000
                 </div>
               </div>
             </div>
