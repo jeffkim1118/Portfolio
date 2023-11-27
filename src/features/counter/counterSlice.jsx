@@ -1,57 +1,55 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const fetchVisitors = createAsyncThunk('fetchVisitors', async(values, thunkAPI) => {
-    await fetch('http://localhost:5000/visitor').then((res) => res.json()).then((data) => {return data}).catch((error) => {
-        return thunkAPI.rejectWithValue(error.value);
-    });
-    // .then((res) => {
-    //     if(!res.ok){
-    //         console.log('not working');
-    //     }else{
-    //         console.log(res.json())
-    //         const response = res.json();
-    //         return response
-    //     }
-    // })
-});
+export const fetchVisitors = createAsyncThunk(
+  "fetchVisitors",
+  async (thunkAPI) => {
+    try {
+      const response = await fetch("http://localhost:5000/visitor");
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.value);
+    }
+  }
+);
 
-export const incrementVisitor = createAsyncThunk('incrementVisitor', async(values, thunkAPI) => {
-    await fetch('http://localhost:5000/visitor', {
-        method:"POST",
-        headers: {'Content-Type': 'application/json'},
-        body:JSON.stringify({value:values})
-    })
-    .then((res) => res.json())
-    .then((data) => {return data})
-    .catch((error) => {
-        return thunkAPI.rejectWithValue(error.message);
-    })
-})
+export const incrementVisitor = createAsyncThunk(
+  "incrementVisitor",
+  async (values, thunkAPI) => {
+    try {
+      await fetch("http://localhost:5000/visitor", {
+        method: "POST",
+      });
+      return values;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.value);
+    }
+  }
+);
 
 const counterSlice = createSlice({
-    name: 'visitor-counter',
-    initialState: {
-        value: 0,
+  name: "visitor-counter",
+  initialState: {
+    value: 0,
+  },
+
+  reducers: {
+    increment: (state, action) => {
+      state.value = action.payload + 1;
     },
-    
-    reducers:{
-        increment:(state, action) => {
-            state.value = action.payload + 1;
-        },
-        getVisitors: (state,action) => {
-            state.value = action.payload
-        }
+    getVisitors: (state, action) => {
+      state.value = action.payload;
     },
-    extraReducers: (builder) => {
-        builder
-        .addCase(fetchVisitors.fulfilled,(state,action) => {
-            state.value = action.payload;
-        })
-        .addCase(incrementVisitor.fulfilled, (state,action) => {
-            state.value = action.payload + 1;
-        })
-    }
-    
-})
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchVisitors.fulfilled, (state, action) => {
+        state.value = action.payload;
+      })
+      .addCase(incrementVisitor.fulfilled, (state, action) => {
+        state.value = action.payload;
+      });
+  },
+});
 export const { increment, getVisitors } = counterSlice.actions;
-export default counterSlice.reducer
+export default counterSlice.reducer;

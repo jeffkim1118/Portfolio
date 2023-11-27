@@ -4,31 +4,28 @@ import { BsLinkedin } from "react-icons/bs";
 import { Link } from "react-scroll";
 import { FaMedium } from "react-icons/fa6";
 import Clock from "./clock";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import MyPic from "../images/mypic.jpg";
-// import {
-//   fetchVisitors,
-//   incrementVisitor,
-// } from "../features/counter/counterSlice";
+import { fetchVisitors, incrementVisitor } from "../features/counter/counterSlice";
+
 
 export default function Home() {
-  // const visitorCount = useSelector((state) => state.counter.value);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [visitorCount, setVisitorCount] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:5000/visitor", {
-      method:'POST'
-    })
-
-
-    fetch("http://localhost:5000/visitor")
-      .then((res) => res.json())
-      .then((data) => setVisitorCount(data));
-  }, []);
-
-  console.log(visitorCount);
-  // console.log(visitorCount['counter'])
+    const fetchData = async () => {
+      try{
+        await dispatch(incrementVisitor());
+        const totalVisitors = await dispatch(fetchVisitors());
+        setVisitorCount(totalVisitors.payload.counter)
+      }catch(error){
+        console.log("error fetching visitors:", error);
+      }
+    }
+    fetchData()
+  }, [dispatch]);
+  
   return (
     <div className="home-component" name="home">
       <div className="hero min-h-screen bg-base-600">
@@ -82,7 +79,7 @@ export default function Home() {
                 <Clock />
                 <div className="stat-title">Total Page Views</div>
                 <div className="stat-value" data-testid="hitcounter">
-                  {visitorCount ? visitorCount['counter'] : <div className="flex-row"><span className="loading loading-spinner loading-lg"></span></div>}
+                  {visitorCount ? visitorCount : <div className="flex-row"><span className="loading loading-spinner loading-lg"></span></div>}
                 </div>
               </div>
             </div>
