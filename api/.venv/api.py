@@ -13,6 +13,13 @@ total_visitors = {
     'counter':0
 }
 
+project_likes = {
+    'first': 0,
+    'second': 0,
+    'third': 0,
+    'fourth': 0
+}
+
 @app.route('/')
 def hello_world():
     return "<p>Hello, world</p>"
@@ -34,3 +41,19 @@ def visitors():
         # breakpoint()
         return total_visitors
 
+
+@app.route('/likes', methods=['GET','POST'])
+@cross_origin()
+def likes(projectIndexNum):
+    global project_likes
+    if request.method == "POST":
+        if projectIndexNum == '1':
+            project_likes['first']+=1
+        elif projectIndexNum == '2':
+            project_likes['second']+=1
+        elif projectIndexNum == '3':
+            project_likes['third']+=1
+        elif projectIndexNum == '4':
+            project_likes['fourth']+=1
+    if request.method == "GET":
+        return project_likes
