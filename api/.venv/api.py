@@ -3,7 +3,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
-cors = CORS(app)
+CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 if __name__ == '__main__':
@@ -29,7 +29,6 @@ def get_current_time():
     return {'time': time.time()}
 
 @app.route('/visitor', methods=['GET', 'POST'])
-@cross_origin()
 def visitors():
     # breakpoint()
     global total_visitors
@@ -43,17 +42,18 @@ def visitors():
 
 
 @app.route('/likes', methods=['GET','POST'])
-@cross_origin()
 def likes(projectIndexNum):
     global project_likes
     if request.method == "POST":
-        if projectIndexNum == '1':
+        # breakpoint()
+        if projectIndexNum == 1:
             project_likes['first']+=1
-        elif projectIndexNum == '2':
+        elif projectIndexNum == 2:
             project_likes['second']+=1
-        elif projectIndexNum == '3':
+        elif projectIndexNum == 3:
             project_likes['third']+=1
-        elif projectIndexNum == '4':
+        elif projectIndexNum == 4:
             project_likes['fourth']+=1
     if request.method == "GET":
+        # breakpoint()
         return project_likes

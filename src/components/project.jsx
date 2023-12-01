@@ -1,9 +1,16 @@
 import Orthodoc from "../images/orthodoc.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export default function Project({ projectItem, indx }) {
   const [likes, setLikes] = useState(0);
   const [isLiked, setIsLike] = useState(false);
-  
+ 
+
+  useEffect(() => {
+    fetch('http://localhost:5000/likes')
+    .then((res) => res.json())
+    .then((data) => console.log(data))
+  },[])
+
   const onLikeButtonClick = () => {
     setLikes(likes + (isLiked ? -1 : 1));
     setIsLike(!isLiked);

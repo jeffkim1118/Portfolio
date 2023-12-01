@@ -9,7 +9,7 @@ export default function Portfolio() {
         <h1 className="text-center text-5xl font-bold m-3">Projects</h1>
           <div className="project-box flex gap-6">
             {Projects.map((projectItem, indx) => {
-              return <Project projectItem={projectItem} index={indx}/>
+              return <Project projectItem={projectItem} indx={indx}/>
             })}
           </div>
         </div>
