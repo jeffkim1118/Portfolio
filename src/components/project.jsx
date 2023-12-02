@@ -6,9 +6,9 @@ export default function Project({ projectItem, indx }) {
  
 
   useEffect(() => {
-    fetch('http://localhost:5000/likes')
-    .then((res) => res.json())
-    .then((data) => console.log(data))
+    // fetch('http://localhost:5000/likes')
+    // .then((res) => res.json())
+    // .then((data) => console.log(data))
   },[])
 
   const onLikeButtonClick = () => {

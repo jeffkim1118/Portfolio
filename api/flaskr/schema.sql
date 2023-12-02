@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS project;
+
+CREATE TABLE project (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    img TEXT NOT NULL,
+    description TEXT NOT NULL,
+    link TEXT NOT NULL
+);

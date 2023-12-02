@@ -25,7 +25,7 @@ export default function Home() {
     }
     fetchData()
   }, [dispatch]);
-  
+  console.log(visitorCount)
   return (
     <div className="home-component" name="home">
       <div className="hero min-h-screen bg-base-600">
