@@ -2,9 +2,6 @@ import os
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 
-
-
-
 total_visitors = {
     'counter':0
 }
@@ -15,7 +12,6 @@ project_likes = {
     'third': 0,
     'fourth': 0
 }
-
 
 def create_app(test_config=None):
     # create and configure the app
