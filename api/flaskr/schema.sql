@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS project;
+DROP TABLE IF EXISTS visitorsCounter;
 
 CREATE TABLE project (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -7,3 +8,8 @@ CREATE TABLE project (
     description TEXT NOT NULL,
     link TEXT NOT NULL
 );
+
+CREATE TABLE visitorsCounter(
+    id INTEGER PRIMARY KEY,
+    counter INTEGER NOT NULL
+)

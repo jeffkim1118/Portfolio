@@ -1,6 +1,9 @@
 import os
+import time
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
+from . import db
+import sqlite3
 
 total_visitors = {
     'counter':0
@@ -40,7 +43,6 @@ def create_app(test_config=None):
     if __name__ == '__main__':
         app.run(host='0.0.0.0')
         
-        
     # a simple page that says hello
     @app.route('/')
     def hello_world():
@@ -52,6 +54,16 @@ def create_app(test_config=None):
 
     @app.route('/visitor', methods=['GET', 'POST'])
     def visitors():
+        con = db.get_db()
+        # breakpoint()
+        cur = con.cursor()
+        cur.execute("""
+                    UPDATE visitorsCounter 
+                    SET counter = counter + 1 
+                    WHERE id = 1 
+                    AND NOT EXISTS (SELECT * FROM visitorsCounter WHERE id = 1 AND counter = 0);
+                    """)
+        db.close_db()
         # breakpoint()
         global total_visitors
         if request.method == "POST":
@@ -61,6 +73,7 @@ def create_app(test_config=None):
         elif request.method == 'GET':
             # breakpoint()
             return total_visitors
+        
 
 
     @app.route('/likes', methods=['GET','POST'])
@@ -80,7 +93,7 @@ def create_app(test_config=None):
             # breakpoint()
             return project_likes
     
-    from . import db
+    
     db.init_app(app)
     
     return app
