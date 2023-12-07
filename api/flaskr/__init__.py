@@ -54,19 +54,20 @@ def create_app(test_config=None):
 
     @app.route('/visitor', methods=['GET', 'POST'])
     def visitors():
-        con = db.get_db()
+        
         # breakpoint()
-        cur = con.cursor()
-        cur.execute("""
+        global total_visitors
+        if request.method == "POST":
+            con = db.get_db()
+        # breakpoint()
+            cur = con.cursor()
+            cur.execute("""
                     UPDATE visitorsCounter 
                     SET counter = counter + 1 
                     WHERE id = 1 
                     AND NOT EXISTS (SELECT * FROM visitorsCounter WHERE id = 1 AND counter = 0);
                     """)
-        db.close_db()
-        # breakpoint()
-        global total_visitors
-        if request.method == "POST":
+            db.close_db()
             total_visitors['counter']+=1
             # breakpoint()
             return total_visitors
