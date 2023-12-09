@@ -54,7 +54,6 @@ def create_app(test_config=None):
 
     @app.route('/visitor', methods=['GET', 'POST'])
     def visitors():
-        
         # breakpoint()
         global total_visitors
         if request.method == "POST":
