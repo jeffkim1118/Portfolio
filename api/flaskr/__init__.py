@@ -55,24 +55,58 @@ def create_app(test_config=None):
     @app.route('/visitor', methods=['GET', 'POST'])
     def visitors():
         # breakpoint()
+        # global total_visitors
+        # if request.method == "POST":
+        #     con = db.get_db()
+        # # breakpoint()
+        #     cur = con.cursor()
+        #     breakpoint()
+        #     cur.execute("""
+        #             UPDATE visitorsCounter 
+        #             SET counter = counter + 1 
+        #             WHERE id = 1 
+        #             AND NOT EXISTS (SELECT * FROM visitorsCounter WHERE id = 1 AND counter = 0);
+        #             """)
+        #     db.close_db()
+        #     total_visitors['counter']+=1
+        #     # breakpoint()
+        #     return total_visitors
+        # elif request.method == 'GET':
+        #     breakpoint()
+        #     con = db.get_db()
+        #     cur = con.cursor()
+        #     query = """SELECT counter FROM visitorsCounter WHERE id = 1"""
+        #     result = cur.execute(query)
+        #     db.close_db()
+        #     return result
         global total_visitors
+
         if request.method == "POST":
             con = db.get_db()
-        # breakpoint()
             cur = con.cursor()
+        
             cur.execute("""
-                    UPDATE visitorsCounter 
-                    SET counter = counter + 1 
-                    WHERE id = 1 
-                    AND NOT EXISTS (SELECT * FROM visitorsCounter WHERE id = 1 AND counter = 0);
-                    """)
+                UPDATE visitorsCounter 
+                SET counter = counter + 1 
+                WHERE id = 1 
+                AND NOT EXISTS (SELECT * FROM visitorsCounter WHERE id = 1 AND counter = 0);
+            """)
+        
+            con.commit()
             db.close_db()
-            total_visitors['counter']+=1
-            # breakpoint()
-            return total_visitors
+
+            total_visitors['counter'] += 1
+            return jsonify(total_visitors)
+
         elif request.method == 'GET':
-            # breakpoint()
-            return total_visitors
+            con = db.get_db()
+            cur = con.cursor()
+            query = """SELECT counter FROM visitorsCounter WHERE id = 1"""
+            cur.execute(query)
+            result = cur.fetchone()[0]  # Fetch one row and get the value from the first column
+            db.close_db()
+            return jsonify({'counter': result})
+           
         
 
 
