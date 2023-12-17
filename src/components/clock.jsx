@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import AnalogClock from "./analogClock";
 
 export default function Clock() {
   const [currentTime, setCurrentTime] = useState();
@@ -11,6 +12,7 @@ export default function Clock() {
         date.toLocaleTimeString("en-US", {
           hour: "numeric",
           minute: "numeric",
+          second: "numeric",
           hour12: true,
         })
       );

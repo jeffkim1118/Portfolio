@@ -9,6 +9,7 @@ import Contact from "./components/contact";
 import { useEffect, useState } from "react";
 import { BsFillArrowUpSquareFill } from "react-icons/bs";
 import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
+import AnalogClock from "./components/analogClock";
 
 function App() {
   const [showButton, setShowButton] = useState();
@@ -37,7 +38,7 @@ function App() {
       <About />
       <Portfolio />
       <Contact />
-
+      
       {showButton && (
         <div className="w-fill text-right">
           <button className="btn" onClick={scrollToTop}>Go back Up<BsFillArrowUpSquareFill className="text-4xl"/></button>

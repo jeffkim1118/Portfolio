@@ -7,6 +7,7 @@ import Clock from "./clock";
 import { useDispatch } from "react-redux";
 import MyPic from "../images/mypic.jpg";
 import { fetchVisitors, incrementVisitor } from "../features/counter/counterSlice";
+import AnalogClock from "./analogClock";
 
 
 export default function Home() {

@@ -1,5 +1,6 @@
 import Orthodoc from "../images/orthodoc.png";
 import { useEffect, useState } from "react";
+import AnalogClock from "./analogClock";
 export default function Project({ projectItem, indx }) {
   const [likes, setLikes] = useState(0);
   const [isLiked, setIsLike] = useState(false);
