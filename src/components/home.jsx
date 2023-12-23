@@ -19,6 +19,7 @@ export default function Home() {
       try{
         await dispatch(incrementVisitor());
         const totalVisitors = await dispatch(fetchVisitors());
+        console.log(totalVisitors)
         setVisitorCount(totalVisitors.payload.counter)
       }catch(error){
         console.log("error fetching visitors:", error);

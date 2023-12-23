@@ -54,31 +54,38 @@ def create_app(test_config=None):
 
     @app.route('/visitor', methods=['GET', 'POST'])
     def visitors():
-        con = db.get_db()
-        cur = con.cursor()
-        # breakpoint()
-        global total_visitors
-        if request.method == "POST":
-        # breakpoint() 
-            request = """UPDATE visitorsCounter SET counter = counter + 1 WHERE id = 1 AND counter > 0;"""
-            breakpoint()
-            cur.execute(request)
-            total_visitors['counter']+=1
-            # breakpoint()
+        if request.method == "GET":
             return total_visitors
-        elif request.method == 'GET':
-            breakpoint()
-            con = db.get_db()
-            cur = con.cursor()
-            query = """SELECT counter FROM visitorsCounter WHERE id = 1"""
-            result = cur.execute(query)
-            return result
+        elif request.method == "POST":
+            total_visitors['counter'] += 1
+            return total_visitors
         
-        db.close_db()
+        # con = db.get_db()
+        # cur = con.cursor()
+        # # breakpoint()
+        # global total_visitors
+        # if request.method == "POST":
+        # # breakpoint() 
+        #     request = """UPDATE visitorsCounter SET counter = counter + 1 WHERE id = 1 AND counter > 0;"""
+        #     breakpoint()
+        #     cur.execute(request)
+        #     total_visitors['counter']+=1
+        #     # breakpoint()
+        #     return total_visitors
+        # elif request.method == 'GET':
+        #     breakpoint()
+        #     con = db.get_db()
+        #     cur = con.cursor()
+        #     query = """SELECT counter FROM visitorsCounter WHERE id = 1"""
+        #     result = cur.execute(query)
+        #     return result
+        
+        # db.close_db()
 
 
     @app.route('/likes', methods=['GET','POST'])
     def likes(projectIndexNum):
+        breakpoint()
         global project_likes
         if request.method == "POST":
             # breakpoint()
@@ -90,6 +97,7 @@ def create_app(test_config=None):
                 project_likes['third']+=1
             elif projectIndexNum == 4:
                 project_likes['fourth']+=1
+            return project_likes
         if request.method == "GET":
             # breakpoint()
             return project_likes

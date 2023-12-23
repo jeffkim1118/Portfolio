@@ -4,7 +4,7 @@ import AnalogClock from "./analogClock";
 export default function Project({ projectItem, indx }) {
   const [likes, setLikes] = useState(0);
   const [isLiked, setIsLike] = useState(false);
- 
+  let indexNumber = indx
 
   useEffect(() => {
     // fetch('http://localhost:5000/likes')
@@ -15,6 +15,16 @@ export default function Project({ projectItem, indx }) {
   const onLikeButtonClick = () => {
     setLikes(likes + (isLiked ? -1 : 1));
     setIsLike(!isLiked);
+
+    fetch('http://localhost:5000/likes',{
+      method:"POST",
+      body:{
+        projectIndexNum: indexNumber
+      }
+    })
+    .then((res) => res.json())
+    .then(data => console.log(data))
+  
   }
 
   return (
