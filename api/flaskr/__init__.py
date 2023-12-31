@@ -85,7 +85,7 @@ def create_app(test_config=None):
 
     @app.route('/likes', methods=['GET','POST'])
     def likes(projectIndexNum):
-        breakpoint()
+   
         global project_likes
         if request.method == "POST":
             # breakpoint()
