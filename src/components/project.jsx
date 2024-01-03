@@ -4,6 +4,8 @@ import AnalogClock from "./analogClock";
 export default function Project({ projectItem, indx }) {
   const [likes, setLikes] = useState(0);
   const [isLiked, setIsLike] = useState(false);
+  const [slide, setSlide] = useState(0);
+
   let indexNumber = indx
 
   useEffect(() => {
@@ -28,13 +30,13 @@ export default function Project({ projectItem, indx }) {
   }
 
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className={slide === indx ? "slide card bg-base-100 shadow-xl" : "slide slide-hidden card bg-base-100 shadow-xl"}>
       <figure>
-        <img className="w-full h-64" src={projectItem.img} alt="Shoes" />
+        <img className="project-img" src={projectItem.img} alt="Shoes" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{projectItem.projectName}</h2>
-        <p>{projectItem.description}</p>
+        <p className="card-description text-xs">{projectItem.description}</p>
 
         <div className="card-actions justify-end">
           <button

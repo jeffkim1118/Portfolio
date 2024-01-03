@@ -23,8 +23,8 @@ export default function Navbar() {
     }
 
   return (
-    <div className="navbar-container w-fit fixed">
-      <ul className="navbar flex-col rounded-lg w-fit m-10 ">
+    <div className="navbar-container w-fit fixed z-10">
+      <ul className="navbar flex-col rounded-lg w-fit m-10 bg-black-100">
         <li className="hover:bg-indigo-500 hover:text-gray-300 hover:shadow-2xl rounded-full">
           <Link className="nav-link cursor-pointer p-3" to="home" smooth={true} duration={600}>
             <AiFillHome className="text-2xl"/>

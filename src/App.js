@@ -8,8 +8,16 @@ import Footer from "./components/footer";
 import Contact from "./components/contact";
 import { useEffect, useState } from "react";
 import { BsFillArrowUpSquareFill } from "react-icons/bs";
-import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
+import {
+  Link,
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+} from "react-scroll";
 import AnalogClock from "./components/analogClock";
+import TimeLine from "./components/timeLine";
 
 function App() {
   const [showButton, setShowButton] = useState();
@@ -31,22 +39,25 @@ function App() {
   };
 
   return (
-    <div className="App h-screen">
-      
-      <Navbar/>
+    <div className="App">
+      <Navbar />
       <Home />
       <About />
+
+      {/* <TimeLine/> */}
       <Portfolio />
       <Contact />
-      
+
       {showButton && (
         <div className="w-fill text-right">
-          <button className="btn" onClick={scrollToTop}>Go back Up<BsFillArrowUpSquareFill className="text-4xl"/></button>
+          <button className="btn" onClick={scrollToTop}>
+            Go back Up
+            <BsFillArrowUpSquareFill className="text-4xl" />
+          </button>
         </div>
       )}
 
       <Footer />
-      
     </div>
   );
 }
