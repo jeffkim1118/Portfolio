@@ -40,9 +40,21 @@ html[data-theme='dark'] {
   width: 100%;
 }
 
+.navbar-container{
+  right: 0;
+}
+
+.goTopBtn{
+  background-color: #191e24;
+}
+
 /* Responsive setting for Mobile phones */
 @media screen and (max-width: 768px){
   .project-box{
     flex-direction: column;
+  }
+
+  .navbar{
+    display: none;
   }
 }

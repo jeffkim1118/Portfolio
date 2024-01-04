@@ -1,5 +1,5 @@
-
 import Phone from "./phone";
+import { BsFillArrowUpSquareFill } from "react-icons/bs";
 
 export default function Contact() {
   return (

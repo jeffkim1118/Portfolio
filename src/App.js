@@ -49,9 +49,8 @@ function App() {
       <Contact />
 
       {showButton && (
-        <div className="w-fill text-right">
+        <div className="goTopBtn w-fill h-12 text-right">
           <button className="btn" onClick={scrollToTop}>
-            Go back Up
             <BsFillArrowUpSquareFill className="text-4xl" />
           </button>
         </div>
