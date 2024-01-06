@@ -50,9 +50,9 @@ export default function Home() {
                   href="https://github.com/jeffkim1118"
                   target="_blank"
                   rel="noreferrer"
-                  className="m-auto "
+                  className="m-auto"
                 >
-                  <BsGithub className="text-4xl m-auto" />
+                  <BsGithub className="text-4xl m-auto " />
                 </a>
 
                 <a

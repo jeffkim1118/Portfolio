@@ -29,7 +29,6 @@ html[data-theme='dark'] {
   grid-row-end: last-line;
 } */
 
-
 .slide{
   max-width: 250px;
   max-height: 500px;
@@ -45,8 +44,81 @@ html[data-theme='dark'] {
 }
 
 .goTopBtn{
-  background-color: #191e24;
+  background-color: transparent;
 }
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 40px 0;
+ 
+}
+
+.timeline-container::after {
+  background-color: #acacac;
+  content: '';
+  position: absolute;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 100%;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+  position: relative;
+  margin: 10px 0;
+  width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+  align-self: flex-end;
+  justify-content: flex-start;
+  padding-left: 30px;
+  padding-right: 0;
+}
+
+.timeline-item-content {
+  color: black;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 15px;
+  position: relative;
+  width: 400px;
+  max-width: 70%;
+  text-align: right;
+}
+
+.timeline-item-content::after {
+  content: ' ';
+  background-color: #4d4d4d;
+  box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  right: -7.5px;
+  top: calc(50% - 7.5px);
+  transform: rotate(45deg);
+  width: 15px;
+  height: 15px;
+}
+
+.timeline-item:nth-child(odd) .timeline-item-content {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.timeline-item:nth-child(odd) .timeline-item-content::after {
+  right: auto;
+  left: -7.5px;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+
 
 /* Responsive setting for Mobile phones */
 @media screen and (max-width: 768px){
@@ -54,7 +126,26 @@ html[data-theme='dark'] {
     flex-direction: column;
   }
 
-  .navbar{
-    display: none;
+  .navbar-container{
+    bottom: 0;
+    width: 100%;
   }
+
+  .navbar{
+    display: flex;
+    margin: 0;
+    width: 100%;
+    padding: 1px;
+    background-color: rgb(27, 27, 27);
+    flex-direction: row;
+    border-radius: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar li{
+    margin: 13px;
+    color: white;
+  }
+
 }

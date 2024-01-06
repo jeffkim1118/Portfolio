@@ -43,14 +43,13 @@ function App() {
       <Navbar />
       <Home />
       <About />
-
-      {/* <TimeLine/> */}
+      <TimeLine/>
       <Portfolio />
       <Contact />
 
       {showButton && (
         <div className="goTopBtn w-fill h-12 text-right">
-          <button className="btn" onClick={scrollToTop}>
+          <button className="btn" onClick={scrollToTop}>Back Up
             <BsFillArrowUpSquareFill className="text-4xl" />
           </button>
         </div>
