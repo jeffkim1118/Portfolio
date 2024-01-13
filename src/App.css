@@ -29,6 +29,11 @@ html[data-theme='dark'] {
   grid-row-end: last-line;
 } */
 
+.my-picture{
+  width: 100px;
+  height: 100px;
+}
+
 .slide{
   max-width: 250px;
   max-height: 500px;
@@ -47,12 +52,22 @@ html[data-theme='dark'] {
   background-color: transparent;
 }
 
+/* ---------------------------- Timeline styling ------------------------------- */
 .timeline-container {
   display: flex;
   flex-direction: column;
   position: relative;
   margin: 40px 0;
- 
+  text-align: center;
+}
+
+.timeline{
+  text-align: center;
+  font-size: 32px;
+}
+
+.bio-title{
+  margin-top: 20px;
 }
 
 .timeline-container::after {
@@ -118,9 +133,60 @@ html[data-theme='dark'] {
   box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
+.timeline-item:nth-child(odd) .timeline-item-content .tag {
+  left: auto;
+  right: 5px;
+}
+
+.timeline-item-content time {
+  color: #777;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.timeline-item-content p {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 15px 0;
+  max-width: 250px;
+}
+
+.timeline-item-content a {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.timeline-item-content a::after {
+  content: ' ►';
+  font-size: 12px;
+}
+
+.timeline-item-content .circle {
+  background-color: #fff;
+  border: 3px solid #5f5f5f;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 10px);
+  right: -40px;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+}
+
+.timeline-item:nth-child(odd) .timeline-item-content .circle {
+  right: auto;
+  left: -40px;
+}
+
+/* ---------------Responsive setting for ipad and laptops -------------------- */
+@media only screen and (max-width: 1023px) {
+  .timeline-item-content {
+      max-width: 100%;
+  }
+}
 
 
-/* Responsive setting for Mobile phones */
+/* --------------- Responsive setting for Mobile phones ---------------------- */
 @media screen and (max-width: 768px){
   .project-box{
     flex-direction: column;
@@ -144,8 +210,26 @@ html[data-theme='dark'] {
   }
   
   .navbar li{
-    margin: 13px;
+    margin: 10px;
     color: white;
   }
 
+  .timeline-item-content,
+    .timeline-item:nth-child(odd) .timeline-item-content {
+        padding:10px;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .timeline-item-content time {
+        margin-top: 20px;
+    }
+
+    .timeline-item-content a {
+        text-decoration: underline;
+    }
+
+    .timeline-item-content a::after {
+        display: none;
+    }
 }

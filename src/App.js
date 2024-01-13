@@ -16,11 +16,28 @@ import {
   animateScroll as scroll,
   scrollSpy,
 } from "react-scroll";
-import AnalogClock from "./components/analogClock";
 import TimeLine from "./components/timeLine";
 
 function App() {
   const [showButton, setShowButton] = useState();
+  // const [prevScrollPos, setPrevScrollPos] = useState(0);
+  // const [showNavbar, setNavbarVisibility] = useState(true);
+
+  // const handleScroll = () => {
+  //   const currentScrollPos = window.scrollY;
+
+  //   if(currentScrollPos > prevScrollPos){
+  //     setNavbarVisibility(false);
+  //   }else{
+  //     setNavbarVisibility(true)
+  //   }
+  //   setPrevScrollPos(currentScrollPos)
+  // }
+
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll)
+  // },[])
 
   useEffect(() => {
     const handleScrollButtonVisibility = () => {

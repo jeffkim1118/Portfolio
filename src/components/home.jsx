@@ -35,12 +35,12 @@ export default function Home() {
       <div className="hero min-h-screen bg-base-600">
         <div className="hero-content text-center">
           <div className="max-w-md">
-            <h1 className="text-5xl font-bold m-5">Hello there!</h1>
             <img
               src={MyPic}
               alt="me"
-              className="w-20 rounded-full m-auto"
+              className="my-picture rounded-full m-auto"
             ></img>
+            <h1 className="text-5xl font-bold m-5">Hello there!</h1>
 
             <p className="py-6 text-lg">My name is Yoonsung Kim.</p>
 
