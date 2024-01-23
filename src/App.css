@@ -194,16 +194,15 @@ html[data-theme='dark'] {
 
   .navbar-container{
     bottom: 0;
-    width: 100%;
+    right: 0;
   }
 
   .navbar{
     display: flex;
     margin: 0;
-    width: 100%;
     padding: 1px;
-    background-color: rgb(27, 27, 27);
-    flex-direction: row;
+    background-color: rgb(63, 63, 63);
+    flex-direction: column;
     border-radius: 0;
     justify-content: center;
     align-items: center;
